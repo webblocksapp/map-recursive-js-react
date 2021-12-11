@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useRoutes } from 'react-router';
+import { Link } from 'react-router-dom';
+import { routes } from './routes';
 
-function App() {
+const App: React.FC = () => {
+  const router = useRoutes(routes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ol>
+        <li>
+          <Link to="/example-1">Example 1 (View console)</Link>
+        </li>
+        <li>
+          <Link to="/example-2">Example 2 (View console)</Link>
+        </li>
+        <li>
+          <Link to="/example-3">
+            Example 3 - Infinite nested tree: (View console)
+          </Link>
+        </li>
+      </ol>
+      {router}
+    </>
   );
-}
+};
 
 export default App;
