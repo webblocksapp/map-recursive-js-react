@@ -1,3 +1,7 @@
+/**
+ * Final and stable version of mapRecursive function
+ * ready to be used on your typescript projects.
+ */
 export const mapRecursive = <T>(
   oldArray: Array<T & { children?: T[] }>,
   callback: (item: T) => T,
