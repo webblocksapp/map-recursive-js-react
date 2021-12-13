@@ -28,7 +28,7 @@ export const TreeMenu: React.FC<TreeMenuProps> = ({
     setMenu((prevMenu) =>
       mapRecursive(prevMenu, (item) => {
         if (item.id === id) {
-          item.open = !item.open;
+          return { ...item, open: !item.open };
         }
         return item;
       })
