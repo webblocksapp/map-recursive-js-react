@@ -19,6 +19,9 @@ const App: React.FC = () => {
             Example 3 - Infinite nested tree: (View console)
           </Link>
         </li>
+        <li>
+          <Link to="/example-4">Nested menu tree</Link>
+        </li>
       </ol>
       {router}
     </>
