@@ -44,12 +44,8 @@ export const TreeMenu: React.FC<TreeMenuProps> = ({
   return (
     <List {...props}>
       {menu.map((item, index) => (
-        <>
-          <ListItemButton
-            key={`${index}-${item.id}`}
-            sx={{ paddingLeft }}
-            onClick={open(item.id)}
-          >
+        <React.Fragment key={`${index}-${item.id}`}>
+          <ListItemButton sx={{ paddingLeft }} onClick={open(item.id)}>
             <ListItemText primary={item.text} />
             {item.children &&
               (item.open ? <ExpandLessIcon /> : <ExpandMoreIcon />)}
@@ -59,7 +55,7 @@ export const TreeMenu: React.FC<TreeMenuProps> = ({
               <TreeMenu menu={item.children} level={level + 1} disablePadding />
             </Collapse>
           )}
-        </>
+        </React.Fragment>
       ))}
     </List>
   );
