@@ -55,7 +55,7 @@ export const TreeMenu: React.FC<TreeMenuProps> = ({
               (item.open ? <ExpandLessIcon /> : <ExpandMoreIcon />)}
           </ListItemButton>
           {item.children && (
-            <Collapse in={item.open} timeout="auto" unmountOnExit>
+            <Collapse in={item.open} timeout="auto">
               <TreeMenu menu={item.children} level={level + 1} disablePadding />
             </Collapse>
           )}
